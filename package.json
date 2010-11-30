@@ -1,0 +1,10 @@
+{
+    "uid": "http://registry.pinf.org/firephp.org/github/ui-plugins/",
+    "name": "ui-plugins",
+    "repositories": [
+        {
+            "type": "git",
+            "url": "git://github.com/firephp/ui-plugins.git"
+        }
+    ]
+}
