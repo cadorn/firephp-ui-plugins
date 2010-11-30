@@ -1,0 +1,11 @@
+{
+    "uid": "http://registry.pinf.org/firephp.org/github/ui-plugins/packages/example-basic/",
+    "name": "example-basic",
+    "repositories": [
+        {
+            "type": "git",
+            "url": "git://github.com/firephp/ui-plugins.git",
+            "path": "packages/example-basic"
+        }
+    ]
+}
