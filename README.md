@@ -11,7 +11,7 @@ All documentation and code contained in this project is to be viewed in the cont
 [FirePHP Companion](http://www.christophdorn.com/Tools/#FirePHP Companion). Long-term, as further clients that implement
 the _Insight_ system become available, the requirement for _FirePHP Companion_ will be relaxed and ultimately removed.
 
-For information on the _Insight Plugin System_ specifically see: https://github.com/insight/sandboxed-ui-plugins
+For information on the _Insight Plugin System_ specifically see: [https://github.com/insight/sandboxed-ui-plugins](https://github.com/insight/sandboxed-ui-plugins)
 
 The information below is simplified and streamlined for FirePHP users to get started with minimal effort.
 
@@ -37,6 +37,7 @@ Requirements
 ============
 
  * [FirePHP 1.0](http://www.christophdorn.com/Blog/2010/11/29/firephp-1-0-in-5-steps/)
+ * [FirePHP Companion LITE](http://www.christophdorn.com/Tools/#FirePHP Companion LITE)
 
 
 Example
@@ -44,7 +45,7 @@ Example
 
 The following steps will install an example plugin that illustrates the basic features of what a plugin can do.
 
-**Step 1:** Download or clone: https://github.com/firephp/ui-plugins
+**Step 1:** Download or clone: [https://github.com/firephp/ui-plugins](https://github.com/firephp/ui-plugins)
 
 **Step 2:** Register and show plugin using the [Insight API](http://reference.developercompanion.com/#/Tools/FirePHPCompanion/API/).
 
@@ -67,18 +68,20 @@ To send a message to this plugin from anywhere in your application use:
 **NOTE:** Messages will only be delivered to the plugin if it is currently showing. Guaranteed message delivery irrespective of the state of the plugin
 in the UI is planned.
 
+See [here](https://github.com/firephp/ui-plugins/blob/master/packages/example-basic/packages/page-top/lib/main.js) for an example of how to listen to messages.
+
 
 Anatomy of a Plugin
 ===================
 
 A _FirePHP UI Plugin_ is a group of HTML/CSS/JavaScript files that follow the [CommonJS](http://www.commonjs.org/)
-[http://wiki.commonjs.org/wiki/Packages/1.0](package format) and some additional conventions.
+[package format](http://wiki.commonjs.org/wiki/Packages/1.0) and some additional conventions.
 
-  <package>/            -> The Plugin Package
+  /                     -> The Plugin Package
     lib/                -> PHP Files that interact with FirePHP & Application
       *.php
     packages/           -> Plugins for specific UI Containers
-      page-top/         -> A plugin for the 'page-top' UI Container
+      page-top/         -> A plugin for the 'page-top' UI Container (shows above page in browser)
         lib/            -> CommonJS JavaScript modules for the plugin
           *.js
         resources/      -> Resources for the module (e.g. css and png files)
@@ -87,9 +90,11 @@ A _FirePHP UI Plugin_ is a group of HTML/CSS/JavaScript files that follow the [C
         package.json    -> The Package Descriptor for the Plugin
 
 **NOTE:** Only the file types/extensions listed above are supported for the various directories. If you need
-support for an addition file type please post to the mailing list.
+support for an addition file type please post to the [mailing list](http://reference.developercompanion.com/#/Tools/FirePHPCompanion/OpenSource/).
 
 **NOTE:** Support for _resources/*.htm_ files for use with template libraries and injection in the plugin will be added soon.
+
+When a plugin is loaded it's _main()_ method is called. The plugin must subsequently inject it's UI into the _#content_ HTML element.
 
 
 Writing your Own
@@ -106,16 +111,25 @@ it may be considered for inclusion in this project according to the following ru
  * May not include advertising or any kind of branding
 
 At this time, the best way to write _FirePHP UI Plugins_ is by using the paid edition of [FirePHP Companion](http://www.christophdorn.com/Tools/#FirePHP Companion).
-It allows for instant reloading of plugins whenever code changes were made. Keep the following in mind when developing plugins with _FirePHP Companion_:
+It allows for instant reloading of plugins whenever code changes are made. Keep the following in mind when developing plugins with _FirePHP Companion_:
 
  * Once a plugin is written anyone can run it free of charge using _FirePHP Companion LITE_. Other clients and browsers will be supported in time.
  * Open the _Firefox Error Console_ to see some JavaScript errors and the _Firebug Console_ to see others. This will be much improved in future.
  * Start with a basic working plugin and make incremental changes while constantly testing each change.
- * Keep in mind the plugin system is new and missing API features that you may need. Be vocal on the mailing list.
+ * Keep in mind the plugin system is new and missing API features that you may need. Be vocal on the [mailing list](http://reference.developercompanion.com/#/Tools/FirePHPCompanion/OpenSource/).
 
 This documentation will be much improved in time.
 
-If you need support in any way feel free to post on the mailing list.
+If you need support in any way feel free to post on the [mailing list](http://reference.developercompanion.com/#/Tools/FirePHPCompanion/OpenSource/).
+
+
+Existing Plugins
+================
+
+The FirePHP plugin system is just getting off the ground so there are not many existing plugins yet. If you are interested in contributing to
+writing plugins for the community to use please introduce yourself on the [mailing list](http://reference.developercompanion.com/#/Tools/FirePHPCompanion/OpenSource/).
+
+ * [Example: Basic](https://github.com/firephp/ui-plugins/tree/master/packages/example-basic/)
 
 
 Support & Feedback
