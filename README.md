@@ -37,7 +37,7 @@ Requirements
 ============
 
  * [FirePHP 1.0](http://www.christophdorn.com/Blog/2010/11/29/firephp-1-0-in-5-steps/)
- * [FirePHP Companion LITE](http://www.christophdorn.com/Tools/#FirePHP Companion LITE)
+ * [FirePHP Companion LITE](http://www.christophdorn.com/Tools/#FirePHP Companion LITE) (or the paid version to make writing plugins easier)
 
 
 Example
@@ -77,24 +77,24 @@ Anatomy of a Plugin
 A _FirePHP UI Plugin_ is a group of HTML/CSS/JavaScript files that follow the [CommonJS](http://www.commonjs.org/)
 [package format](http://wiki.commonjs.org/wiki/Packages/1.0) and some additional conventions.
 
-  /                     -> The Plugin Package
-    lib/                -> PHP Files that interact with FirePHP & Application
-      *.php
-    packages/           -> Plugins for specific UI Containers
-      page-top/         -> A plugin for the 'page-top' UI Container (shows above page in browser)
-        lib/            -> CommonJS JavaScript modules for the plugin
-          *.js
-        resources/      -> Resources for the module (e.g. css and png files)
-          *.css
-          *.png
-        package.json    -> The Package Descriptor for the Plugin
+    <package>/            -> The Plugin Package
+      lib/                -> PHP Files that interact with FirePHP & Application
+        *.php
+      packages/           -> Plugins for specific UI Containers
+        page-top/         -> A plugin for the 'page-top' UI Container (shows above page in browser)
+          lib/            -> CommonJS JavaScript modules for the plugin
+            *.js
+          resources/      -> Resources for the module (e.g. css and png files)
+            *.css
+            *.png
+          package.json    -> The Package Descriptor for the Plugin
 
 **NOTE:** Only the file types/extensions listed above are supported for the various directories. If you need
 support for an addition file type please post to the [mailing list](http://reference.developercompanion.com/#/Tools/FirePHPCompanion/OpenSource/).
 
 **NOTE:** Support for _resources/*.htm_ files for use with template libraries and injection in the plugin will be added soon.
 
-When a plugin is loaded it's _main()_ method is called. The plugin must subsequently inject it's UI into the _#content_ HTML element.
+When a plugin is loaded it's _main()_ method in _lib/main.js_ is called. The plugin must subsequently inject it's UI into the _#content_ HTML element.
 
 
 Writing your Own
@@ -118,7 +118,12 @@ It allows for instant reloading of plugins whenever code changes are made. Keep 
  * Start with a basic working plugin and make incremental changes while constantly testing each change.
  * Keep in mind the plugin system is new and missing API features that you may need. Be vocal on the [mailing list](http://reference.developercompanion.com/#/Tools/FirePHPCompanion/OpenSource/).
 
-This documentation will be much improved in time.
+This documentation will be much improved in time. For now some pointers:
+
+ * The _Insight Plugin API_ used by the plugins to communicate with the browser and FirePHP is published here: [https://github.com/insight/plugin-api](https://github.com/insight/plugin-api)
+ * You can add your own _CommonJS modules_ in the _lib_ directory (in addition to _main.js_) and load them into other modules using _require('./<name>')_ (no _.js_ extension).
+ * Common libraries that plugins may load and the client will automatically provide can be found here: [https://github.com/insight/plugin-libraries](https://github.com/insight/plugin-libraries)
+ * Relative _@import_ instructions may be used in _CSS_ files.
 
 If you need support in any way feel free to post on the [mailing list](http://reference.developercompanion.com/#/Tools/FirePHPCompanion/OpenSource/).
 
