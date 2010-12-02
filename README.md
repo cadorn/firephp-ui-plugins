@@ -48,24 +48,80 @@ The following steps will install an example plugin that illustrates the basic fe
 
 **Step 2:** Register and show plugin using the [Insight API](http://reference.developercompanion.com/#/Tools/FirePHPCompanion/API/).
 
+    $plugin = FirePHP::to("plugin")->plugin('BasicExample');
+    $plugin->register(array(
+        'container' => 'page-top',
+        'class' => 'FirePHP_UIPlugins_ExampleBasic_Plugin',
+        'file' => '<ABSOLUTE_PATH_TO>/ui-plugins/packages/example-basic/lib/Plugin.php',
+        'forceReload' => true   // Force plugin to always reload during development
+    ));
+    $plugin->show();
+
+**NOTE:** Forced reloading requires the paid edition of [FirePHP Companion](http://www.christophdorn.com/Tools/#FirePHP Companion). To reload a plugin,
+(after making changes to it's code) when using the free _FirePHP Companion LITE_ edition, restart the browser.
+
+To send a message to this plugin from anywhere in your application use:
+
+    FirePHP::to('plugin')->plugin('BasicExample')->sendSimpleMessage($data);
+
+**NOTE:** Messages will only be delivered to the plugin if it is currently showing. Guaranteed message delivery irrespective of the state of the plugin
+in the UI is planned.
 
 
 Anatomy of a Plugin
 ===================
 
-A _FirePHP Plugin_ is a group of HTML/CSS/JavaScript files that follow the [CommonJS](http://www.commonjs.org/)
-[http://wiki.commonjs.org/wiki/Packages/1.0](package format).
+A _FirePHP UI Plugin_ is a group of HTML/CSS/JavaScript files that follow the [CommonJS](http://www.commonjs.org/)
+[http://wiki.commonjs.org/wiki/Packages/1.0](package format) and some additional conventions.
+
+  <package>/            -> The Plugin Package
+    lib/                -> PHP Files that interact with FirePHP & Application
+      *.php
+    packages/           -> Plugins for specific UI Containers
+      page-top/         -> A plugin for the 'page-top' UI Container
+        lib/            -> CommonJS JavaScript modules for the plugin
+          *.js
+        resources/      -> Resources for the module (e.g. css and png files)
+          *.css
+          *.png
+        package.json    -> The Package Descriptor for the Plugin
+
+**NOTE:** Only the file types/extensions listed above are supported for the various directories. If you need
+support for an addition file type please post to the mailing list.
+
+**NOTE:** Support for _resources/*.htm_ files for use with template libraries and injection in the plugin will be added soon.
 
 
+Writing your Own
+================
 
+You can write your own _FirePHP UI Plugins_ and share them with others or just use them for your own application internally.
+To share them with others you can host them yourself or use any code sharing site such as github. If a plugin is of general value
+it may be considered for inclusion in this project according to the following rules:
 
+ * Must use the _Insight API_ as implemented in the [FirePHP project](http://reference.developercompanion.com/#/Tools/FirePHPCompanion/API/) for all server components.
+ * Must be of use with PHP applications, frameworks and libraries
+ * Must have a pleasant look and feel ideally consistent with other plugins (specific guidelines will be established in time)
+ * Must be licensed as MIT
+ * May not include advertising or any kind of branding
 
+At this time, the best way to write _FirePHP UI Plugins_ is by using the paid edition of [FirePHP Companion](http://www.christophdorn.com/Tools/#FirePHP Companion).
+It allows for instant reloading of plugins whenever code changes were made. Keep the following in mind when developing plugins with _FirePHP Companion_:
+
+ * Once a plugin is written anyone can run it free of charge using _FirePHP Companion LITE_. Other clients and browsers will be supported in time.
+ * Open the _Firefox Error Console_ to see some JavaScript errors and the _Firebug Console_ to see others. This will be much improved in future.
+ * Start with a basic working plugin and make incremental changes while constantly testing each change.
+ * Keep in mind the plugin system is new and missing API features that you may need. Be vocal on the mailing list.
+
+This documentation will be much improved in time.
+
+If you need support in any way feel free to post on the mailing list.
 
 
 Support & Feedback
 ==================
 
-See [FirePHP OpenSource](http://reference.developercompanion.com/#/Tools/FirePHPCompanion/OpenSource/)
+See [FirePHP OpenSource](http://reference.developercompanion.com/#/Tools/FirePHPCompanion/OpenSource/) for mailing list.
 
 
 Author
