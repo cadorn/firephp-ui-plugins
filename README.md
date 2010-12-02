@@ -121,7 +121,7 @@ It allows for instant reloading of plugins whenever code changes are made. Keep 
 This documentation will be much improved in time. For now some pointers:
 
  * The _Insight Plugin API_ used by the plugins to communicate with the browser and FirePHP is published here: [https://github.com/insight/plugin-api](https://github.com/insight/plugin-api)
- * You can add your own _CommonJS modules_ in the _lib_ directory (in addition to _main.js_) and load them into other modules using _require('./<name>')_ (no _.js_ extension).
+ * You can add your own _CommonJS modules_ in the _lib_ directory (in addition to _main.js_) and load them into other modules using _require('./\<name\>')_ (no _.js_ extension).
  * Common libraries that plugins may load and the client will automatically provide can be found here: [https://github.com/insight/plugin-libraries](https://github.com/insight/plugin-libraries)
  * Relative _@import_ instructions may be used in _CSS_ files.
 
