@@ -124,6 +124,7 @@ This documentation will be much improved in time. For now some pointers:
  * You can add your own _CommonJS modules_ in the _lib_ directory (in addition to _main.js_) and load them into other modules using _require('./\<name\>')_ (no _.js_ extension).
  * Common libraries that plugins may load and the client will automatically provide can be found here: [https://github.com/insight/plugin-libraries](https://github.com/insight/plugin-libraries)
  * Relative _@import_ instructions may be used in _CSS_ files.
+ * Plugin packages can be placed anywhere in your application.
 
 If you need support in any way feel free to post on the [mailing list](http://reference.developercompanion.com/#/Tools/FirePHPCompanion/OpenSource/).
 

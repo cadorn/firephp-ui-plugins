@@ -11,15 +11,13 @@ HTML, BODY, INPUT, TEXTAREA, TD, P {
 }
 
 DIV.links {
-    padding: 10px;
+    padding: 5px;
     display: inline-block;
 }
 DIV.notes {
-    padding: 10px;
-    display: inline-block;
+    padding: 5px;
 }
 
 A {
-    margin-left: 3px;
-    margin-right: 3px;
+    margin-right: 5px;
 }

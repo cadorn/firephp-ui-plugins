@@ -15,6 +15,7 @@ exports.main = function() {
     JQUERY("#content").html(
         [
             '<div class="links"><a href="#" id="ping-server-link">Ping Server</a></div>',
+            '<div class="links"><a href="#" id="toggle-height-link">Toggle Height</a></div>',
             '<div class="notes">Open <i>Firebug Console</i> to see messages.</div>'
         ].join("\n")
     );
@@ -25,6 +26,16 @@ exports.main = function() {
         }]);
         INSIGHT.to("plugin").plugin().sendSimpleMessage({
             "said": "Hello World from Basic Example: " + new Date()
+        });
+    }, false);
+
+    document.getElementById("toggle-height-link").addEventListener("click", function() {
+        PLUGIN.getHeight(function(height) {
+            if(height==50) {
+                PLUGIN.setHeight(100);
+            } else {
+                PLUGIN.setHeight(50);
+            }
         });
     }, false);
 
