@@ -8,8 +8,15 @@ class FirePHP_UIPlugins_ExampleBasic_Plugin extends Insight_Program_JavaScript {
 
         $data = $message->getData();
 
-        $this->sendSimpleMessage($data); // or
-//        FirePHP::to('plugin')->plugin($this->getAlias())->sendSimpleMessage($data);
+        if($message->getType()=='simple-response') {
 
+            return array("Got It!", "received" => $data);
+
+        } else {
+
+            $this->sendSimpleMessage($data); // or
+//            FirePHP::to('plugin')->plugin($this->getAlias())->sendSimpleMessage($data);
+            
+        }
     }
 }
