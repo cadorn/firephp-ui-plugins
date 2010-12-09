@@ -2,6 +2,7 @@
     "implements": {
         "cadorn.org/insight/@meta/plugin/0": {
             "options": {
+                "label": "Example: Basic",
                 "height": 50
             }
         }
