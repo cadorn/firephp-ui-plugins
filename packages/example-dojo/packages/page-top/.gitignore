@@ -1,3 +1,5 @@
+/resources/dojo/
+# The rules below do not work but we keep them here to keep track of the files we need to take care of
 !/resources/dojo/insight-plugin/insight-plugin.js
 !/resources/dojo/insight-plugin/dijit/themes/claro/claro.css
 !/resources/dojo/insight-plugin/dojo/resources/blank.gif
