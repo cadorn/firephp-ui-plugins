@@ -1,0 +1,10 @@
+{
+    "name": "example-dojo",
+    "repositories": [
+        {
+            "type": "git",
+            "url": "git://github.com/firephp/ui-plugins.git",
+            "path": "packages/example-dojo"
+        }
+    ]
+}

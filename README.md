@@ -136,6 +136,8 @@ The FirePHP plugin system is just getting off the ground so there are not many e
 writing plugins for the community to use please introduce yourself on the [mailing list](http://reference.developercompanion.com/#/Tools/FirePHPCompanion/OpenSource/).
 
  * [Example: Basic](https://github.com/firephp/ui-plugins/tree/master/packages/example-basic/)
+ * [Example: DOM](https://github.com/firephp/ui-plugins/tree/master/packages/example-dom/)
+ * [Example: Dojo](https://github.com/firephp/ui-plugins/tree/master/packages/example-dojo/)
 
 
 Support & Feedback
