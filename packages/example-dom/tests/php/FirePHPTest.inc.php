@@ -1,6 +1,6 @@
 <?php
 
-$plugin = FirePHP::to("plugin")->plugin('BasicDom');
+$plugin = FirePHP::to("plugin")->plugin('ExampleDom');
 $plugin->register(array(
     'class' => 'FirePHP_UIPlugins_ExampleDom_Plugin',
     'file' => dirname(dirname(dirname(__FILE__))) . '/lib/Plugin.php',
