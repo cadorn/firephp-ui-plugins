@@ -7,11 +7,27 @@ exports.main = function() {
 
     PLUGIN.addCss("style.css");
 
-    // "content" is the root HTML element (body) to put markup into
+    JQUERY("#content").html("This plugin is non-functional at this time.");
+
+/*
+
+    // augment namespace
+    JQUERY("html").attr("xmlns:a", "http://ajax.org/2005/aml");
+
+    // set UI content
     JQUERY("#content").html(
         [
-            'Hello World from APF'
+            '<a:skin src="aristo/skins.xml" media-path="aristo/images/" icon-path="aristo/icons/" />',
+            '<a:button id="test-button">Click me!</a:button>'
         ].join("\n")
     );
+
+    // load apf
+    PLUGIN.loadResourceScript("apf/apf-release.js", function() {
+        
+console.log({"html": JQUERY("html")});        
+
+    });
+*/
 
 }

@@ -4,6 +4,12 @@
             "options": {
                 "label": "Example: APF",
                 "height": 50
+            },
+            "resources": {
+                "paths": {
+                    "/": "include",
+                    "/apf/": "lazy"
+                }
             }
         }
     },
@@ -16,6 +22,11 @@
         "jquery": {
             "catalog": "http://registry.pinf.org/jsinsight.org/github/plugin-libraries/packages/catalog.json",
             "name": "jquery",
+            "revision": "master"
+        },
+        "apf": {
+            "catalog": "http://registry.pinf.org/jsinsight.org/github/plugin-libraries/packages/catalog.json",
+            "name": "apf",
             "revision": "master"
         }
     }
