@@ -1,5 +1,6 @@
 
 var PLUGIN = require('plugin/plugin');
+var PAGE = require('plugin/page');
 var CONSOLE = require('plugin/console');
 var JQUERY = require('jquery/jquery').jQuery;
 
@@ -20,7 +21,7 @@ exports.main = function() {
 
     JQUERY("#log-data-link").click(function() {
 
-        PLUGIN.getPageWindow(function(window) {
+        PAGE.getWindow(function(window) {
             var element = getOurDocument(window).getElementById("data");
             if(!element) {
                 CONSOLE.info("Cannot locate element with ID 'data'. Make sure the plugin test page is loaded.");
@@ -33,7 +34,7 @@ exports.main = function() {
 
     JQUERY("#match-list-link").click(function() {
 
-        PLUGIN.getPageWindow(function(window) {
+        PAGE.getWindow(function(window) {
 
             var document = getOurDocument(window);
 
